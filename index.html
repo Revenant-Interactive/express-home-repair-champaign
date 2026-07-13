@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15201d">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Express Home Repair Handyman Service serves Champaign, Urbana, and Savoy with dependable home repairs, honest pricing, and 20 years of experience. Call (217) 284-4207 for a free estimate.">
+  <title>Express Home Repair Handyman Service | Champaign, IL</title>
+  <style>
+    :root {
+      --forest: #15201d;
+      --forest-2: #1d2b27;
+      --forest-3: #263a34;
+      --ink: #18201e;
+      --cream: #f4f0e7;
+      --paper: #fbfaf6;
+      --white: #ffffff;
+      --yellow: #f4bd2f;
+      --yellow-dark: #dca319;
+      --rust: #c85835;
+      --sage: #98aa9e;
+      --muted: #66716d;
+      --line: #d9d8d0;
+      --shadow: 0 26px 70px rgba(21, 32, 29, 0.17);
+      --radius: 22px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --display: "Arial Black", "Arial Narrow", Impact, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    svg {
+      display: block;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      color: var(--forest);
+      background: var(--yellow);
+      border-radius: 8px;
+      font-weight: 850;
+      text-decoration: none;
+      transform: translateY(-180%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 4px;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .button {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border: 0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button svg {
+      flex: 0 0 19px;
+      width: 19px;
+      height: 19px;
+    }
+
+    .button-primary {
+      color: var(--forest);
+      background: var(--yellow);
+      box-shadow: 0 13px 32px rgba(244, 189, 47, 0.22);
+    }
+
+    .button-primary:hover {
+      background: #ffd15a;
+    }
+
+    .button-dark {
+      color: white;
+      background: var(--forest);
+    }
+
+    .button-dark:hover {
+      background: var(--forest-3);
+    }
+
+    .button-outline {
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .button-outline:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .emergency-bar {
+      color: #f4f4ed;
+      background: #0d1513;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .emergency-inner {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .emergency-inner span,
+    .emergency-inner a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .emergency-inner a {
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #76bd83;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(118, 189, 131, 0.12);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      color: white;
+      background: rgba(21, 32, 29, 0.97);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 49px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      background: var(--yellow);
+      clip-path: polygon(50% 0, 100% 35%, 89% 35%, 89% 100%, 11% 100%, 11% 35%, 0 35%);
+      font-family: var(--display);
+      font-size: 1.05rem;
+      letter-spacing: -0.08em;
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1.02;
+    }
+
+    .brand-copy strong {
+      font-size: 1.05rem;
+      font-weight: 950;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy small {
+      margin-top: 6px;
+      color: #aab8b1;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links > a:not(.button) {
+      color: #dbe2de;
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 84% 40%, rgba(244, 189, 47, 0.12), transparent 26%),
+        linear-gradient(118deg, var(--forest) 0%, #182620 58%, #101917 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.13;
+      background-image:
+        linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to right, transparent 0%, transparent 36%, black 100%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      min-height: 682px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(410px, 0.78fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 100px);
+      padding-block: 84px 98px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 21px;
+      color: var(--rust);
+      font-size: 0.75rem;
+      font-weight: 950;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow,
+    .dark-section .eyebrow,
+    .cta-card .eyebrow {
+      color: var(--yellow);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 4px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(3.45rem, 7.2vw, 6.8rem);
+      font-weight: 950;
+      letter-spacing: -0.058em;
+      line-height: 0.91;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero-lead {
+      max-width: 690px;
+      margin: 29px 0 0;
+      color: #c8d2cd;
+      font-size: clamp(1rem, 1.8vw, 1.19rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      margin-top: 24px;
+      color: #9fb0a8;
+      font-size: 0.78rem;
+      font-weight: 750;
+    }
+
+    .hero-note span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-note svg {
+      width: 16px;
+      height: 16px;
+      color: var(--yellow);
+    }
+
+    .plan-card {
+      position: relative;
+      min-height: 470px;
+      padding: 30px;
+      color: var(--forest);
+      background: var(--paper);
+      border-radius: 5px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+      transform: rotate(1.2deg);
+    }
+
+    .plan-card::before,
+    .plan-card::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      width: 96px;
+      height: 22px;
+      background: rgba(244, 189, 47, 0.78);
+      box-shadow: 0 2px 4px rgba(21, 32, 29, 0.12);
+    }
+
+    .plan-card::before {
+      top: -8px;
+      left: 40px;
+      transform: rotate(-5deg);
+    }
+
+    .plan-card::after {
+      right: 36px;
+      bottom: -7px;
+      transform: rotate(4deg);
+    }
+
+    .plan-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--forest);
+      font-size: 0.68rem;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .plan-top span:last-child {
+      color: var(--rust);
+    }
+
+    .house-plan {
+      width: 100%;
+      height: 265px;
+      margin: 14px 0 3px;
+      color: var(--forest-3);
+    }
+
+    .plan-footer {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 15px;
+    }
+
+    .plan-stat {
+      min-width: 0;
+      padding: 11px 7px;
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .plan-stat strong,
+    .plan-stat span {
+      display: block;
+    }
+
+    .plan-stat strong {
+      font-size: 0.78rem;
+      font-weight: 950;
+      overflow-wrap: anywhere;
+      text-transform: uppercase;
+    }
+
+    .plan-stat span {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .trust-strip {
+      color: var(--forest);
+      background: var(--yellow);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 24px 22px;
+      border-right: 1px solid rgba(21, 32, 29, 0.2);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item svg {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .trust-item strong,
+    .trust-item span {
+      display: block;
+    }
+
+    .trust-item strong {
+      font-size: 0.88rem;
+    }
+
+    .trust-item span {
+      margin-top: 2px;
+      color: rgba(21, 32, 29, 0.7);
+      font-size: 0.73rem;
+    }
+
+    .section {
+      padding-block: clamp(84px, 10vw, 132px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 52px;
+      margin-bottom: 46px;
+    }
+
+    .section h2,
+    .cta-card h2 {
+      max-width: 760px;
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.75rem, 5.2vw, 5rem);
+      font-weight: 950;
+      letter-spacing: -0.05em;
+      line-height: 0.93;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 490px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .services {
+      background: var(--paper);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 286px;
+      padding: 30px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(21, 32, 29, 0.1);
+    }
+
+    .service-card::after {
+      content: attr(data-number);
+      position: absolute;
+      right: -4px;
+      bottom: -35px;
+      color: rgba(21, 32, 29, 0.045);
+      font-family: var(--display);
+      font-size: 9rem;
+      line-height: 1;
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      background: var(--yellow);
+      border-radius: 8px;
+    }
+
+    .service-icon svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .service-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 28px 0 0;
+      font-size: 1.18rem;
+      font-weight: 950;
+      letter-spacing: -0.025em;
+    }
+
+    .service-card p {
+      position: relative;
+      z-index: 1;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .services-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 25px;
+      padding: 25px 28px;
+      color: white;
+      background: var(--forest);
+      border-radius: 12px;
+    }
+
+    .services-foot p {
+      margin: 0;
+      color: #c8d2cd;
+      font-size: 0.9rem;
+    }
+
+    .services-foot strong {
+      color: white;
+    }
+
+    .dark-section {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background: var(--forest);
+    }
+
+    .dark-section::after {
+      content: "";
+      position: absolute;
+      right: -180px;
+      bottom: -210px;
+      width: 580px;
+      height: 580px;
+      border: 86px solid rgba(255,255,255,.035);
+      border-radius: 50%;
+    }
+
+    .repair-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(430px, 1.1fr);
+      gap: clamp(50px, 9vw, 118px);
+      align-items: center;
+    }
+
+    .repair-copy p:not(.eyebrow) {
+      max-width: 600px;
+      margin: 24px 0 0;
+      color: #adbbb4;
+      font-size: 1rem;
+    }
+
+    .repair-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .repair-item {
+      min-height: 148px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+    }
+
+    .repair-item span {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      background: var(--yellow);
+      border-radius: 50%;
+      font-size: 0.78rem;
+      font-weight: 950;
+    }
+
+    .repair-item h3 {
+      margin: 17px 0 0;
+      font-size: 0.96rem;
+    }
+
+    .repair-item p {
+      margin: 6px 0 0;
+      color: #96a9a0;
+      font-size: 0.78rem;
+    }
+
+    .process {
+      background: var(--cream);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .step {
+      position: relative;
+      padding-top: 28px;
+      border-top: 4px solid var(--forest);
+    }
+
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: -19px;
+      left: 0;
+      min-width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      background: var(--yellow);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 950;
+    }
+
+    .step h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 950;
+    }
+
+    .step p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .local-section {
+      padding-top: 0;
+      background: var(--cream);
+    }
+
+    .local-card {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      overflow: hidden;
+      color: white;
+      background: var(--rust);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .local-copy {
+      padding: clamp(38px, 7vw, 76px);
+    }
+
+    .local-copy .eyebrow {
+      color: #ffe1d2;
+    }
+
+    .local-copy h2 {
+      max-width: 670px;
+    }
+
+    .local-copy p:not(.eyebrow) {
+      margin: 22px 0 0;
+      color: #ffe1d2;
+    }
+
+    .local-visual {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      padding: 45px;
+      color: var(--forest);
+      background: var(--yellow);
+      overflow: hidden;
+    }
+
+    .local-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(var(--forest) 1px, transparent 1px),
+        linear-gradient(90deg, var(--forest) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .local-seal {
+      position: relative;
+      z-index: 1;
+      width: 290px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 42px;
+      color: var(--forest);
+      background: var(--paper);
+      border: 4px solid var(--forest);
+      border-radius: 50%;
+      text-align: center;
+      transform: rotate(-4deg);
+      box-shadow: 10px 12px 0 rgba(21, 32, 29, 0.16);
+    }
+
+    .local-seal::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 2px dashed var(--forest);
+      border-radius: 50%;
+    }
+
+    .local-seal strong,
+    .local-seal span {
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+
+    .local-seal strong {
+      font-family: var(--display);
+      font-size: 2.45rem;
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .local-seal span {
+      margin-top: 12px;
+      font-size: 0.71rem;
+      font-weight: 900;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .visit {
+      background: var(--paper);
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(380px, 0.78fr);
+      gap: clamp(50px, 9vw, 110px);
+      align-items: start;
+    }
+
+    .visit-copy p:not(.eyebrow) {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: var(--muted);
+    }
+
+    .visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hours-card {
+      padding: 32px;
+      color: white;
+      background: var(--forest-2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hours-card h3 {
+      margin: 0 0 23px;
+      font-size: 1.22rem;
+      font-weight: 950;
+    }
+
+    .hours-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      font-size: 0.87rem;
+    }
+
+    .hours-row span:first-child {
+      color: #c4d0ca;
+      font-weight: 750;
+    }
+
+    .hours-row span:last-child {
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .hours-note {
+      display: flex;
+      gap: 10px;
+      margin: 22px 0 0;
+      color: #aebcb5;
+      font-size: 0.75rem;
+    }
+
+    .hours-note svg {
+      flex: 0 0 17px;
+      width: 17px;
+      height: 17px;
+      margin-top: 2px;
+      color: var(--yellow);
+    }
+
+    .contact-band {
+      padding-block: 0 110px;
+      background: var(--paper);
+    }
+
+    .cta-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(42px, 8vw, 100px);
+      align-items: center;
+      padding: clamp(40px, 7vw, 78px);
+      color: white;
+      background: var(--forest);
+      border-radius: 30px;
+    }
+
+    .cta-card::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      width: 340px;
+      height: 340px;
+      border: 50px solid rgba(244,189,47,.11);
+      border-radius: 50%;
+    }
+
+    .cta-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-card p:not(.eyebrow) {
+      max-width: 620px;
+      margin: 21px 0 0;
+      color: #b6c4bd;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-actions .button {
+      width: 100%;
+      min-height: 62px;
+    }
+
+    .site-footer {
+      padding: 35px 0 112px;
+      color: #96a59e;
+      background: #0d1513;
+      font-size: 0.75rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .site-footer p {
+      max-width: 850px;
+      margin: 0;
+    }
+
+    .site-footer p + p {
+      margin-top: 8px;
+    }
+
+    .site-footer strong,
+    .site-footer a {
+      color: white;
+    }
+
+    .mobile-call {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      z-index: 50;
+      display: none;
+      min-height: 60px;
+      box-shadow: 0 17px 38px rgba(13, 21, 19, 0.34);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .repair-grid {
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+
+      .plan-card {
+        width: min(100%, 590px);
+        transform: none;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(21, 32, 29, 0.2);
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .local-card,
+      .visit-grid,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .emergency-inner {
+        justify-content: center;
+      }
+
+      .emergency-inner > span:nth-child(2),
+      .emergency-inner > a,
+      .nav-links > a:not(.button),
+      .nav .button {
+        display: none;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .brand-copy strong {
+        font-size: 0.92rem;
+      }
+
+      .hero-grid {
+        gap: 54px;
+        padding-block: 60px 76px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 12vw, 3.3rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .plan-card {
+        min-height: 430px;
+        padding: 23px;
+      }
+
+      .house-plan {
+        height: 245px;
+      }
+
+      .trust-grid,
+      .service-grid,
+      .repair-list,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid rgba(21, 32, 29, 0.2);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .services-foot {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .local-visual {
+        min-height: 380px;
+      }
+
+      .local-seal {
+        width: 245px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-call {
+        display: inline-flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="emergency-bar">
+    <div class="emergency-inner shell">
+      <span><span class="status-dot" aria-hidden="true"></span> Emergency service available 24/7</span>
+      <span>Champaign · Urbana · Savoy</span>
+      <a href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">Call (217) 284-4207</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Express Home Repair home">
+        <span class="brand-mark" aria-hidden="true">ER</span>
+        <span class="brand-copy">
+          <strong>Express Home Repair</strong>
+          <small>The Quality People Company</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">Why Express</a>
+        <a href="#contact">Hours &amp; area</a>
+        <a class="button button-primary" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"/></svg>
+          Free estimate
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid shell">
+        <div>
+          <p class="eyebrow">Locally owned · 20 years of experience</p>
+          <h1>Get the list <span>fixed.</span></h1>
+          <p class="hero-lead">Dependable handyman help for the repairs, installations, and small projects that keep piling up around your home or business.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"/></svg>
+              Call (217) 284-4207
+            </a>
+            <a class="button button-outline" href="#services">See what we repair</a>
+          </div>
+          <div class="hero-note">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              Honest, up-front pricing
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              Fully insured
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+              References available
+            </span>
+          </div>
+        </div>
+
+        <aside class="plan-card" aria-label="Express Home Repair service overview">
+          <div class="plan-top"><span>Home repair plan</span><span>Let's fix it</span></div>
+          <svg class="house-plan" viewBox="0 0 430 290" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M56 137 215 35l159 102" stroke-width="5"/>
+            <path d="M82 123v133h266V123M124 256v-82h69v82M245 152h59v53h-59z"/>
+            <path d="M224 70h74v48M276 70v48M82 229h42M193 229h155" opacity=".45"/>
+            <path d="m28 267 374 0M38 274v-14M392 274v-14" opacity=".6"/>
+            <path d="M125 188h68M159 174v82M245 179h59M274 152v53" opacity=".48"/>
+            <circle cx="180" cy="215" r="3" fill="currentColor" stroke="none"/>
+            <path d="m333 49 21 21M343 39l21 21M336 66l20-20" stroke="#c85835" stroke-width="5"/>
+            <path d="M30 42h92M30 52h60M30 62h76" opacity=".35"/>
+          </svg>
+          <div class="plan-footer">
+            <div class="plan-stat"><strong>20 years</strong><span>Experience</span></div>
+            <div class="plan-stat"><strong>Local</strong><span>Owned &amp; operated</span></div>
+            <div class="plan-stat"><strong>24/7</strong><span>Emergencies</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Business qualities">
+      <div class="trust-grid shell">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.7 9 9 5.2-.3 9-4 9-9V7l-9-5Z"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+          <div><strong>Fully insured</strong><span>Professional home service</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg>
+          <div><strong>Locally owned</strong><span>Serving the Champaign area</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong>Flexible scheduling</strong><span>Evenings and weekends available</span></div>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+          <div><strong>Free estimates</strong><span>Clear scope before work begins</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">One call, a shorter list</p>
+            <h2>Repairs for every room—and outside.</h2>
+          </div>
+          <p class="section-intro">From everyday wear and tear to installation work, Express Home Repair handles a broad range of practical projects for homes and businesses.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card" data-number="1">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 12h16M12 4v16"/><path d="m8 8 1 1M15 15l1 1"/></svg>
+            </span>
+            <h3>Drywall &amp; wall repair</h3>
+            <p>Patch damaged drywall, repair walls, and get rooms ready to feel finished again.</p>
+          </article>
+          <article class="service-card" data-number="2">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18H5zM8 6h8v15H8z"/><circle cx="14" cy="14" r="1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <h3>Doors, locks &amp; hardware</h3>
+            <p>Door repairs, knobs, deadbolts, locks, blinds, artwork, mailboxes, and household hardware.</p>
+          </article>
+          <article class="service-card" data-number="3">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v6a5 5 0 0 0 10 0V3M12 14v7M8 21h8"/><path d="M4 6h3M17 6h3"/></svg>
+            </span>
+            <h3>Plumbing fixtures</h3>
+            <p>General plumbing repairs for toilets, sinks, faucets, and the fixtures you use every day.</p>
+          </article>
+          <article class="service-card" data-number="4">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 22h4M8 14a6 6 0 1 1 8 0c-1.2.8-1 2-1 2H9s.2-1.2-1-2Z"/><path d="M12 2v2"/></svg>
+            </span>
+            <h3>Lighting &amp; electrical</h3>
+            <p>Light fixtures, ceiling fans, chandeliers, smoke detectors, and common electrical repairs.</p>
+          </article>
+          <article class="service-card" data-number="5">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18M5 8v12M19 8v12M8 8V4h8v4M9 12h6M9 16h6"/></svg>
+            </span>
+            <h3>Decks, fences &amp; outdoors</h3>
+            <p>Deck repair and sealing, fence repair, handrails, yard cleanup, hauling, and exterior upkeep.</p>
+          </article>
+          <article class="service-card" data-number="6">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6 4 16l4 4L18 10M13 7l4 4M16 4l4 4"/><path d="M3 21h8"/></svg>
+            </span>
+            <h3>Assembly &amp; accessibility</h3>
+            <p>Furniture assembly, grab bars, handrails, and practical improvements for comfort and safety.</p>
+          </article>
+        </div>
+
+        <div class="services-foot">
+          <p><strong>Not sure if it belongs on the list?</strong> Call and describe the job. Express Home Repair can help you figure out the next step.</p>
+          <a class="button button-primary" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">Ask about your project</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="about">
+      <div class="repair-grid shell">
+        <div class="repair-copy">
+          <p class="eyebrow">The Quality People Company</p>
+          <h2>Dependable help. No runaround.</h2>
+          <p>With 20 years of experience, Express Home Repair brings practical know-how, clear communication, and attention to detail to jobs large and small.</p>
+        </div>
+        <div class="repair-list">
+          <article class="repair-item">
+            <span>01</span>
+            <h3>Tell us what needs attention</h3>
+            <p>A loose rail, damaged wall, leaky fixture, or a full list—start with a call.</p>
+          </article>
+          <article class="repair-item">
+            <span>02</span>
+            <h3>Get a clear estimate</h3>
+            <p>Honest, up-front pricing helps you understand the scope before work begins.</p>
+          </article>
+          <article class="repair-item">
+            <span>03</span>
+            <h3>Schedule around real life</h3>
+            <p>Weekday hours with evening and weekend appointments available.</p>
+          </article>
+          <article class="repair-item">
+            <span>04</span>
+            <h3>Enjoy a finished job</h3>
+            <p>Quality work backed by a commitment to customer satisfaction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Simple from the first call</p>
+            <h2>How to get started.</h2>
+          </div>
+          <p class="section-intro">You do not need to diagnose the problem or write a perfect project brief. Just tell us what you see.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step" data-step="1">
+            <h3>Call with your repair list</h3>
+            <p>Describe the job, the location, and anything that makes it urgent.</p>
+          </article>
+          <article class="step" data-step="2">
+            <h3>Review the estimate</h3>
+            <p>Get a straightforward scope and pricing before the work moves ahead.</p>
+          </article>
+          <article class="step" data-step="3">
+            <h3>Choose a time</h3>
+            <p>Book a weekday visit or ask about an evening or weekend appointment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section local-section">
+      <div class="local-card shell">
+        <div class="local-copy">
+          <p class="eyebrow">Local service, close to home</p>
+          <h2>Serving Champaign, Urbana &amp; Savoy.</h2>
+          <p>Express Home Repair is locally owned and operated in Champaign, with handyman service for homeowners and businesses throughout the surrounding area.</p>
+        </div>
+        <div class="local-visual" aria-hidden="true">
+          <div class="local-seal">
+            <div>
+              <strong>20 years</strong>
+              <span>Local repair experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="contact">
+      <div class="visit-grid shell">
+        <div class="visit-copy">
+          <p class="eyebrow">Call for a free estimate</p>
+          <h2>Ready to cross it off the list?</h2>
+          <p>Call Express Home Repair to talk through your project, request an estimate, or ask about emergency service. The business is located at 3 Imperial Court in Champaign.</p>
+          <div class="visit-actions">
+            <a class="button button-dark" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">Call (217) 284-4207</a>
+            <a class="button button-dark" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Imperial%20Court%20Champaign%20IL%2061820" target="_blank" rel="noopener noreferrer">Open directions</a>
+          </div>
+        </div>
+
+        <aside class="hours-card" aria-label="Business hours">
+          <h3>Service hours</h3>
+          <div class="hours-row"><span>Monday</span><span>8:00 AM–6:00 PM</span></div>
+          <div class="hours-row"><span>Tuesday</span><span>8:00 AM–6:00 PM</span></div>
+          <div class="hours-row"><span>Wednesday</span><span>8:00 AM–6:00 PM</span></div>
+          <div class="hours-row"><span>Thursday</span><span>8:00 AM–6:00 PM</span></div>
+          <div class="hours-row"><span>Friday</span><span>8:00 AM–6:00 PM</span></div>
+          <div class="hours-row"><span>Saturday–Sunday</span><span>By appointment</span></div>
+          <p class="hours-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Emergency service is available 24 hours a day, 7 days a week.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact-band">
+      <div class="shell">
+        <div class="cta-card">
+          <div>
+            <p class="eyebrow">One call starts the fix</p>
+            <h2>Your repair list has met its match.</h2>
+            <p>Call now for a free estimate and a straightforward conversation about what your home or business needs.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button button-primary" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"/></svg>
+              (217) 284-4207
+            </a>
+            <a class="button button-outline" href="https://www.google.com/maps/search/?api=1&amp;query=3%20Imperial%20Court%20Champaign%20IL%2061820" target="_blank" rel="noopener noreferrer">3 Imperial Court · Champaign</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid shell">
+      <div>
+        <p><strong>Express Home Repair Handyman Service · Champaign, Illinois</strong></p>
+        <p>Spec demo built independently by Michael Taylor to show what is possible. Not commissioned by or affiliated with Express Home Repair Handyman Service. Available for immediate takedown on request.</p>
+      </div>
+      <p>Demo contact: <a href="tel:+12175526313">(217) 552-6313</a></p>
+    </div>
+  </footer>
+
+  <a class="button button-primary mobile-call" href="tel:+12172844207" aria-label="Call Express Home Repair at 217-284-4207">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"/></svg>
+    Call Express Home Repair
+  </a>
+</body>
+</html>
